@@ -1,0 +1,113 @@
+{
+	"doe": {
+	    "properties": {
+            "Coupon": {
+                "type": "multi_field",
+                "fields": {
+                    "Coupon": {
+                        "type": "string",
+                        "index": "analyzed"
+                    },
+                    "exact": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    }
+                }
+            },
+            "Series": {
+                "type": "multi_field",
+                "fields": {
+                    "Series": {
+                        "type": "string",
+                        "index": "analyzed"
+                    },
+                    "exact": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    }
+                }
+            },
+            "Panel": {
+                "type": "multi_field",
+                "fields": {
+                    "Panel": {
+                        "type": "string",
+                        "index": "analyzed"
+                    },
+                    "exact": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    }
+                }
+            },
+	        "Measured Spreadsheet": {
+     	        "type": "string",
+                "index": "not_analyzed"
+            },
+            "Calculated Spreadsheet": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Summary Spreadsheet": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Post Crack Image": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Failure Mode Image": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Pd-Curve": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "R-Curve": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Temperature": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Humidity": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Adhesive Out Time": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Prep.-to-Bond Time": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Surface Preparation": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Vacuum Pressure": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Hand Lotion Contam.": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Skin Oil Contam.": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Contaminate Type": {
+                "type": "string",
+                "index": "not_analyzed"
+            },
+            "Contamination Amount": {
+                "type": "string",
+                "index": "not_analyzed"
+            }
+	    }
+	}
+}
