@@ -11,7 +11,7 @@ https://github.com/CottageLabs/facetview2
 https://github.com/mobz/elasticsearch-head
 
 ## transform data from CSV to JSON
-After compiling CSVtoJSON.java, execute the CSVtoJSON.class file with the following arguments:
+After compiling CSVtoJSON.java, execute the CSVtoJSON.class file with the following arguments (make sure the original file is in csv format):
 ```
 $ java CSVtoJSON [name of the original csv file] [name of the json file to be generated]
 ```
