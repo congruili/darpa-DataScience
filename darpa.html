@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>DARPA Data Browser</title>
+
+    <script type="text/javascript" src="vendor/jquery/1.7.1/jquery-1.7.1.min.js"></script>
+
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="vendor/jquery-ui-1.8.18.custom/jquery-ui-1.8.18.custom.css">
+    <script type="text/javascript" src="vendor/jquery-ui-1.8.18.custom/jquery-ui-1.8.18.custom.min.js"></script>
+
+    <!-- note that we require the es.js integration, the bootstrap2 facetview and the facetview core -->
+    <script type="text/javascript" src="es.js"></script>
+    <script type="text/javascript" src="bootstrap2.facetview.theme.js"></script>
+    <script type="text/javascript" src="jquery.facetview2.js"></script>
+
+    <link rel="stylesheet" href="css/facetview.css">
+
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('.facet-view-simple').facetview({
+                search_url: '//localhost:9200/darpa/doe/_search',
+                page_size: 20,
+                sort: [{"_score" : {"order" : "desc"}}],
+                sharesave_link: true,
+                search_button: true,
+                default_freetext_fuzzify: "*",
+                default_facet_operator: "AND",
+                default_facet_order: "count",
+                default_facet_size: 500,
+                facets: [
+                    {'field': 'Series.exact', 'display': 'Series'},
+                    {'field': 'Panel.exact', 'display': 'Panel'}
+                ],
+                search_sortby: [
+                    {'display':'Title','field':'title.exact'}
+                ],
+                render_result_record: function(options, record)
+                {
+
+                    var html = "<tr><td>";
+
+                    if (record["Coupon"]) {
+                        html += "<strong>Coupon: </strong>" + record["Coupon"];
+                    }
+
+                    if (record["Series"]) {
+                        html += "<br /><strong>Series: </strong>" + record["Series"];
+                    }
+
+                    if (record["Panel"]) {
+                        html += "<br /><strong>Panel: </strong>" + record["Panel"];
+                    }
+
+                    html += "<br><br><strong>Parameters: </strong><br /><ul>";
+                    if (record["Temperature"]) {
+                        html += "<li>Temperature: " + record["Temperature"] + "</li>";
+                    }
+                    if (record["Humidity"]) {
+                        html += "<li>Humidity: " + record["Humidity"] + "</li>";
+                    }
+                    if (record["Adhesive Out Time"]) {
+                        html += "<li>Adhesive Out Time: " + record["Adhesive Out Time"] + "</li>";
+                    }
+                    if (record["Prep.-to-Bond Time"]) {
+                        html += "<li>Prep.-to-Bond Time: " + record["Prep.-to-Bond Time"] + "</li>";
+                    }
+                    if (record["Surface Preparation"]) {
+                        html += "<li>Surface Preparation: " + record["Surface Preparation"] + "</li>";
+                    }
+                    if (record["Vacuum Pressure"]) {
+                        html += "<li>Vacuum Pressure: " + record["Vacuum Pressure"] + "</li>";
+                    }
+                    if (record["Hand Lotion Contam."]) {
+                        html += "<li>Hand Lotion Contam.: " + record["Hand Lotion Contam."] + "</li>";
+                    }
+                    if (record["Skin Oil Contam."]) {
+                        html += "<li>Skin Oil Contam.: " + record["Skin Oil Contam."] + "</li>";
+                    }
+                    if (record["Contaminate Type"]) {
+                        html += "<li>Contaminate Type: " + record["Contaminate Type"] + "</li>";
+                    }
+                    if (record["Contamination Amount"]) {
+                        html += "<li>Contamination Amount: " + record["Contamination Amount"] + "</li>";
+                    }
+                    html += "</ul>";
+
+                    if (record["Measured Spreadsheet"]) {
+                        html += "<a href=\"" + record["Measured Spreadsheet"] + "\">" + "<strong>Measured Spreadsheet</strong>" + "</a>";
+                    }
+
+                    if (record["Calculated Spreadsheet"]) {
+                        html += "<br><a href=\"" + record["Calculated Spreadsheet"] + "\">" + "<strong>Calculated Spreadsheet</strong>" + "</a>";
+                    }
+
+                    if (record["Summary Spreadsheet"]) {
+                        html += "<br><a href=\"" + record["Summary Spreadsheet"] + "\">" + "<strong>Summary Spreadsheet</strong>" + "</a>";
+                    }
+
+                    if (record["Post Crack Image"]) {
+                        html += "<br><a href=\"" + record["Post Crack Image"] + "\">" + "<strong>Post Crack Image</strong>" + "</a>";
+                    }
+
+                    if (record["Failure Mode Image"]) {
+                        html += "<br><a href=\"" + record["Failure Mode Image"] + "\">" + "<strong>Failure Mode Image</strong>" + "</a>";
+                    }
+
+                    if (record["Pd-Curve"]) {
+                        html += "<br><a href=\"" + record["Pd-Curve"] + "\">" + "<strong>Pd-Curve</strong>" + "</a>";
+                    }
+
+                    if (record["R-Curve"]) {
+                        html += "<br><a href=\"" + record["R-Curve"] + "\">" + "<strong>R-Curve</strong>" + "</a>";
+                    }
+
+                    html += "</td></tr>";
+                    return html;
+                },
+                selected_filters_in_facet: true,
+                show_filter_field : true,
+                show_filter_logic: true,
+                post_init_callback: function(options, context) {
+                    // None for now
+                },
+                post_render_callback: function(options, context) {
+                    // None for now
+                }
+            });
+        });
+
+    </script>
+
+    <style type="text/css">
+
+        .facet-view-simple{
+            width:100%;
+            height:100%;
+            margin:20px auto 0 auto;
+        }
+
+        .facetview_freetext.span4 {
+            width: 290px;
+            height: 12px;
+        }
+
+        legend {
+            display: none;
+        }
+
+        #wrapper-content {
+            padding-top: 0px;
+        }
+
+        input {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .alert {
+            margin-top: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="facet-view-simple"></div>
+</body>
+</html>
