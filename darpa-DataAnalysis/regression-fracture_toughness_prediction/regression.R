@@ -18,7 +18,7 @@ train <- mydata[-val,]
 test <- mydata[val,]
 target <- c('AdjWork')
 predictors <- names(mydata)[!names(mydata) %in% target]
-# calculate variables for adjusted R-squared
+# calculate values for adjusted R-squared
 k <- dim(mydata)[2] - 1
 N <- dim(test)[1]
 adj.coe <- (N - 1) / (N - k - 1)
