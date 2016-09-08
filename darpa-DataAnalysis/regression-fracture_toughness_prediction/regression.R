@@ -43,8 +43,8 @@ varimp(cforest.model)
 # Lasso regression
 cvfit = cv.glmnet(as.matrix(train[,predictors]), train[,target], type.measure = "mse", alpha = 1, nfolds = 5)
 plot(cvfit)
-# lambda.min is the value of λλ that gives minimum mean cross-validated error. 
-# The other λλ saved is lambda.1se, which gives the most regularized model such that error is within one standard error of the minimum. 
+# lambda.min is the value of λ that gives minimum mean cross-validated error. 
+# The other λ saved is lambda.1se, which gives the most regularized model such that error is within one standard error of the minimum. 
 lasso.predictions <- predict(cvfit, newx = as.matrix(test[,predictors]), s = "lambda.min")
 #lasso.predictions <- predict(cvfit, newx = as.matrix(test[,predictors]), s = "lambda.1se")
 lasso.r.squared <- sum((lasso.predictions-means)^2)/sum((test[,target]-means)^2)
@@ -81,7 +81,7 @@ for (depth in seq(1,10,1)) {
   }
 } 
 
-# use the best depth and nround value from the cross validation, fill in the two "?" below
+# use the best depth and nround values from the cross validation, fill in the two "?" below
 bst <- xgboost(data = as.matrix(train[,predictors]),
                label = train[,target],
                max.depth=?, nround=?,
