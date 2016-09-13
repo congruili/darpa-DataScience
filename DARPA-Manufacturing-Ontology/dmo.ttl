@@ -1,0 +1,322 @@
+@prefix dmo: <https://tw.rpi.edu/web/project/dmo#> .
+@prefix ampo: <https://tw.rpi.edu/web/project/ampo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sio: <http://semanticscience.org/ontology/sio.owl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://tw.rpi.edu/web/project/dmo> rdf:type owl:Ontology ;
+                                      owl:versionIRI <https://tw.rpi.edu/web/project/dmo/1.0.0> ;
+                                      owl:imports <http://semanticscience.org/ontology/sio.owl> ;
+                                      dcterms:identifier "http://tw.rpi.edu/web/project/dmo/dmo.ttl" ;
+                                      owl:versionInfo "1.0.0" ;
+                                      dcterms:creator ampo:congrui_li , dmo:charles_parslow ;
+                                      dcterms:contributor ampo:bryan_chu ;
+                                      rdfs:label "DM Ontology" ;
+                                      rdfs:comment "DARPA Manufacturing Ontology. The ontology is available at: https://github.com/lic10/darpa-DataScience/blob/master/darpa-FacetedBrowser/dmo.ttl. The ontology uses the namespace prefix dmo." ;
+                                      dcterms:title "DM Ontology" ;
+                                      dcterms:date "2016-09-10"^^xsd:date .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://xmlns.com/foaf/0.1/mbox
+foaf:mbox rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://tw.rpi.edu/web/project/ampo#hasAttribute
+ampo:hasAttribute rdf:type owl:ObjectProperty ;
+                  owl:inverseOf ampo:isAttributeOf ;
+                  rdfs:range ampo:Attribute ;
+                  rdfs:comment "An entity may have one or more attributes." ;
+                  rdfs:label "has attribute" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#isAttributeOf
+ampo:isAttributeOf rdf:type owl:ObjectProperty ;
+                   rdfs:domain ampo:Attribute ;
+                   rdfs:comment "An attribute belongs to an entity." ;
+                   rdfs:label "is attribute of" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#belongsTo
+dmo:belongsTo rdf:type owl:ObjectProperty ;
+              owl:inverseOf dmo:contains ;
+              rdfs:comment "" ;
+              rdfs:label "belongs to" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#contains
+dmo:contains rdf:type owl:ObjectProperty ;
+             owl:inverseOf dmo:belongsTo ;
+             rdfs:comment "" ;
+             rdfs:label "contains" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#experimentsOn
+dmo:experimentsOn rdf:type owl:ObjectProperty ;
+                  rdfs:domain dmo:Experiment ;
+                  rdfs:range dmo:Coupon ;
+                  rdfs:comment "" ;
+                  rdfs:label "experiments on" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#isGeneratedFrom
+dmo:isGeneratedFrom rdf:type owl:ObjectProperty ;
+                    owl:inverseOf dmo:generates ;
+                    rdfs:domain dmo:Data ;
+                    rdfs:range dmo:Data ;
+                    rdfs:comment "" ;
+                    rdfs:label "is generated from" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#generates
+dmo:generates rdf:type owl:ObjectProperty ;
+              owl:inverseOf dmo:isGeneratedFrom ;
+              rdfs:domain dmo:Data ;
+              rdfs:range dmo:Data ;
+              rdfs:comment "" ;
+              rdfs:label "generates" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#isOutputOf
+dmo:isOutputOf rdf:type owl:ObjectProperty ;
+               rdfs:domain dmo:Output ;
+               rdfs:range dmo:Section ;
+               rdfs:comment "" ;
+               rdfs:label "is output of" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#isResultOf
+dmo:isResultOf rdf:type owl:ObjectProperty ;
+               rdfs:domain dmo:Result ;
+               rdfs:range dmo:Experiment ;
+               rdfs:comment "" ;
+               rdfs:label "is result of" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://tw.rpi.edu/web/project/dmo#downloadURL
+dmo:downloadURL rdf:type owl:DatatypeProperty ;
+                rdfs:domain dmo:Data ;
+                rdfs:range xsd:anyURI ;
+                rdfs:comment "" ;
+                rdfs:label "download URL" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#hasID
+dmo:hasID rdf:type owl:DatatypeProperty ;
+          rdfs:domain dmo:Coupon ,
+                      dmo:Panel ,
+                      dmo:Part ,
+                      dmo:Section ,
+                      dmo:Series ;
+          rdfs:range xsd:string ;
+          rdfs:comment "" ;
+          rdfs:label "has ID" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class .
+
+
+###  https://tw.rpi.edu/web/project/ampo#AbstractAttribute
+ampo:AbstractAttribute rdf:type owl:Class ;
+                       rdfs:subClassOf ampo:Attribute ;
+                       rdfs:comment "Property which does not correspond to a physical or numerical entity. Used to restrict and modify relations." ;
+                       rdfs:label "Abstract Attribute" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#Attribute
+ampo:Attribute rdf:type owl:Class ;
+               rdfs:subClassOf <http://semanticscience.org/resource/SIO_000614> ;
+               rdfs:comment "An intrinsic property belonging to a single entity." ;
+               rdfs:label "Attribute" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#Capacity
+ampo:Capacity rdf:type owl:Class ;
+              rdfs:subClassOf ampo:Attribute ;
+              rdfs:comment "Property of the equipment or the surrounding environment describing the ability to perform or produce." ;
+              rdfs:label "Capacity" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#Chemical
+ampo:Chemical rdf:type owl:Class ;
+              rdfs:subClassOf ampo:Attribute ;
+              rdfs:comment "Chemical property of an entity. Examples include melting point." ;
+              rdfs:label "Chemical" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#DynamicQuantitativeAttribute
+ampo:DynamicQuantitativeAttribute rdf:type owl:Class ;
+                                  rdfs:subClassOf ampo:QuantitativeAttribute ;
+                                  rdfs:comment "An attribute that is a function of time." ;
+                                  rdfs:label "Dynamic Quantitative Attribute" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#Geometric
+ampo:Geometric rdf:type owl:Class ;
+               rdfs:subClassOf ampo:Attribute ;
+               rdfs:comment "Attribute which describes the shape." ;
+               rdfs:label "Geometric" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#Mechanical
+ampo:Mechanical rdf:type owl:Class ;
+                rdfs:subClassOf ampo:Attribute ;
+                rdfs:comment "Mechanical property of an entity. Examples include strength." ;
+                rdfs:label "Mechanical" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#Optical
+ampo:Optical rdf:type owl:Class ;
+             rdfs:subClassOf ampo:Attribute ;
+             rdfs:comment "Optical property of an entity. Examples include reflectivity." ;
+             rdfs:label "Optical" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#Product
+ampo:Product rdf:type owl:Class ;
+             rdfs:subClassOf <http://semanticscience.org/resource/SIO_000776> ;
+             rdfs:comment "End result or work-in-progress result of processes or steps." ;
+             rdfs:label "Product" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#QuantitativeAttribute
+ampo:QuantitativeAttribute rdf:type owl:Class ;
+                           rdfs:subClassOf ampo:Attribute ;
+                           rdfs:comment "Property which quantifies the quantity of an artifact. Examples include surface roughness." ;
+                           rdfs:label "Quantitative Attribute" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#StaticQuantitativeAttribute
+ampo:StaticQuantitativeAttribute rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://data.nasa.gov/qudt/owl/qudt#Quantity> ,
+                                                 ampo:QuantitativeAttribute ;
+                                 rdfs:comment "An attribute that remains the same throughout the process." ;
+                                 rdfs:label "Static Quantitative Attribute" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#Thermal
+ampo:Thermal rdf:type owl:Class ;
+             rdfs:subClassOf ampo:Attribute ;
+             rdfs:comment "Thermal property of an entity. Examples include thermal conductivity." ;
+             rdfs:label "Thermal" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#Coupon
+dmo:Coupon rdf:type owl:Class ;
+           rdfs:subClassOf ampo:Product ;
+           rdfs:comment "" ;
+           rdfs:label "Coupon" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#Data
+dmo:Data rdf:type owl:Class ;
+         rdfs:comment "" ;
+         rdfs:label "Data" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#Experiment
+dmo:Experiment rdf:type owl:Class ;
+               rdfs:comment "" ;
+               rdfs:label "Experiment" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#Output
+dmo:Output rdf:type owl:Class ;
+           rdfs:subClassOf dmo:Data ;
+           rdfs:comment "" ;
+           rdfs:label "Output" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#Panel
+dmo:Panel rdf:type owl:Class ;
+          rdfs:comment "" ;
+          rdfs:label "Panel" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#Part
+dmo:Part rdf:type owl:Class ;
+         rdfs:subClassOf ampo:Product ;
+         rdfs:comment "" ;
+         rdfs:label "Part" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#Result
+dmo:Result rdf:type owl:Class ;
+           rdfs:subClassOf dmo:Data ;
+           rdfs:comment "" ;
+           rdfs:label "Result" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#Numerical
+dmo:Numerical rdf:type owl:Class ;
+              rdfs:subClassOf dmo:Data ;
+              rdfs:comment "" ;
+              rdfs:label "Numerical" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#Graphical
+dmo:Graphical rdf:type owl:Class ;
+              rdfs:subClassOf dmo:Data ;
+              rdfs:comment "" ;
+              rdfs:label "Graphical" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#Section
+dmo:Section rdf:type owl:Class ;
+            rdfs:comment "" ;
+            rdfs:label "Section" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#Series
+dmo:Series rdf:type owl:Class ;
+           rdfs:comment "" ;
+           rdfs:label "Series" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://tw.rpi.edu/web/project/ampo#congrui_li
+ampo:congrui_li rdf:type owl:NamedIndividual ,
+                         foaf:Person ;
+                foaf:mbox <mailto:lic10@rpi.edu> ;
+                foaf:name "Congrui Li" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#charles_parslow
+dmo:charles_parslow rdf:type owl:NamedIndividual ,
+                             foaf:Person ;
+                    foaf:mbox <mailto:parslc@rpi.edu> ;
+                    foaf:name "Charles Parslow" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#bryan_chu
+ampo:bryan_chu rdf:type owl:NamedIndividual ,
+                        foaf:Person ;
+               foaf:mbox <mailto:chub3@rpi.edu> ;
+               foaf:name "Bryan Chu" .
