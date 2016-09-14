@@ -94,18 +94,38 @@ dmo:generates rdf:type owl:ObjectProperty ;
 
 ###  https://tw.rpi.edu/web/project/dmo#isOutputOf
 dmo:isOutputOf rdf:type owl:ObjectProperty ;
+               owl:inverseOf dmo:hasOutput ;
                rdfs:domain dmo:Output ;
                rdfs:range dmo:Section ;
                rdfs:comment "" ;
                rdfs:label "is output of" .
 
 
+###  https://tw.rpi.edu/web/project/dmo#hasOutput
+dmo:hasOutput rdf:type owl:ObjectProperty ;
+              owl:inverseOf dmo:isOutputOf ;
+              rdfs:domain dmo:Section ;
+              rdfs:range dmo:Output ;
+              rdfs:comment "" ;
+              rdfs:label "has output" .
+
+
 ###  https://tw.rpi.edu/web/project/dmo#isResultOf
 dmo:isResultOf rdf:type owl:ObjectProperty ;
+               owl:inverseOf dmo:hasResult ;
                rdfs:domain dmo:Result ;
                rdfs:range dmo:Experiment ;
                rdfs:comment "" ;
                rdfs:label "is result of" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#hasResult
+dmo:hasResult rdf:type owl:ObjectProperty ;
+              owl:inverseOf dmo:isResultOf ;
+              rdfs:domain dmo:Experiment ;
+              rdfs:range dmo:Result ;
+              rdfs:comment "" ;
+              rdfs:label "has result" .
 
 
 #################################################################
