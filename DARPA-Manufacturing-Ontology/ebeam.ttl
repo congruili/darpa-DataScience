@@ -1,0 +1,599 @@
+dmo:tom rdfs:label "tom" ;
+        rdf:type prov:Person .
+
+
+###  https://tw.rpi.edu/web/project/ampo#absorptance
+ampo:absorptance rdf:type ampo:Optical ,
+                          ampo:StaticQuantitativeAttribute ;
+                 rdfs:label "absorptance" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#chemical_porosity
+ampo:chemical_porosity rdf:type ampo:Chemical ,
+                                ampo:StaticQuantitativeAttribute ;
+                       rdfs:label "chemical porosity" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ct_scan_image
+ampo:ct_scan_image rdf:type ampo:Optical ,
+                            ampo:StaticQuantitativeAttribute ;
+                   rdfs:label "CT scan image" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#density
+ampo:density rdf:type ampo:StaticQuantitativeAttribute ,
+                      ampo:Thermal ;
+             rdfs:label "density" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#dimensional_accuracy
+ampo:dimensional_accuracy rdf:type ampo:Geometric ,
+                                   ampo:StaticQuantitativeAttribute ;
+                          rdfs:label "dimensional accuracy" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_CAD_model
+ampo:ebeam_CAD_model rdf:type ampo:Model ;
+                     ampo:isParticipantIn ampo:ebeam_post-processing ;
+                     ampo:generates ampo:ebeam_path_CAD_model ;
+                     rdfs:label "ebeam CAD model" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_chamber
+ampo:ebeam_chamber rdf:type ampo:WorkingVolume ;
+                   ampo:hasAttribute ampo:volume ;
+                   ampo:isParticipantIn ampo:ebeam_chamber_preparation ;
+                   ampo:hasInput ampo:temperature ;
+                   rdfs:label "ebeam chamber" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_chamber_preparation
+ampo:ebeam_chamber_preparation rdf:type ampo:Step ;
+                               ampo:happensDirectlyBefore ampo:ebeam_loop_1_of_20 ;
+                               rdfs:label "ebeam chamber preparation" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_feed
+ampo:ebeam_feed rdf:type ampo:Actuator ;
+                ampo:hasAttribute ampo:feed_max_speed ;
+                ampo:isParticipantIn ampo:wire_feeding_1_of_20 ,
+                                     ampo:wire_feeding_2_of_20 ,
+                                     ampo:wire_feeding_3_of_20 ,
+                                     ampo:wire_feeding_4_of_20 ,
+                                     ampo:wire_feeding_5_of_20 ,
+                                     ampo:wire_feeding_6_of_20 ,
+                                     ampo:wire_feeding_7_of_20 ,
+                                     ampo:wire_feeding_8_of_20 ,
+                                     ampo:wire_feeding_9_of_20 ,
+                                     ampo:wire_feeding_10_of_20 ,
+                                     ampo:wire_feeding_11_of_20 ,
+                                     ampo:wire_feeding_12_of_20 ,
+                                     ampo:wire_feeding_13_of_20 ,
+                                     ampo:wire_feeding_14_of_20 ,
+                                     ampo:wire_feeding_15_of_20 ,
+                                     ampo:wire_feeding_16_of_20 ,
+                                     ampo:wire_feeding_17_of_20 ,
+                                     ampo:wire_feeding_18_of_20 ,
+                                     ampo:wire_feeding_19_of_20 ,
+                                     ampo:wire_feeding_20_of_20 ;
+                ampo:hasInput ampo:speed ;
+                ampo:movesMaterial ampo:wire ;
+                rdfs:label "ebeam feed" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_gas
+ampo:ebeam_gas rdf:type ampo:EnvironmentalMaterial ;
+               ampo:hasAttribute ampo:density ,
+                                 ampo:gas_reactivity ;
+               ampo:isParticipantIn ampo:ebeam_chamber_preparation ;
+               ampo:affects ampo:ebeam_chamber ;
+               rdfs:label "ebeam gas" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_gun
+ampo:ebeam_gun rdf:type ampo:Equipment ;
+               ampo:hasAttribute ampo:absorptance ,
+                                 ampo:focal_length ,
+                                 ampo:frequency ,
+                                 ampo:gun_max_power ,
+                                 ampo:gun_max_speed ,
+                                 ampo:gun_step_size ,
+                                 ampo:reflectivity ,
+                                 ampo:spot_diameter ;
+               ampo:hasInput ampo:ebeam_path ,
+                             ampo:power ;
+               ampo:addsEnergyTo ampo:wire ;
+               rdfs:label "ebeam gun" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_optics_system
+ampo:ebeam_optics_system rdf:type ampo:Equipment ;
+                         ampo:hasPart ampo:ebeam_gun ;
+                         ampo:isParticipantIn ampo:preheat_1_of_20 ,
+                                              ampo:preheat_2_of_20 ,
+                                              ampo:preheat_3_of_20 ,
+                                              ampo:preheat_4_of_20 ,
+                                              ampo:preheat_5_of_20 ,
+                                              ampo:preheat_6_of_20 ,
+                                              ampo:preheat_7_of_20 ,
+                                              ampo:preheat_8_of_20 ,
+                                              ampo:preheat_9_of_20 ,
+                                              ampo:preheat_10_of_20 ,
+                                              ampo:preheat_11_of_20 ,
+                                              ampo:preheat_12_of_20 ,
+                                              ampo:preheat_13_of_20 ,
+                                              ampo:preheat_14_of_20 ,
+                                              ampo:preheat_15_of_20 ,
+                                              ampo:preheat_16_of_20 ,
+                                              ampo:preheat_17_of_20 ,
+                                              ampo:preheat_18_of_20 ,
+                                              ampo:preheat_19_of_20 ,
+                                              ampo:preheat_20_of_20 ,
+                                              ampo:laser_scanning_1_of_20 ,
+                                              ampo:laser_scanning_2_of_20 ,
+                                              ampo:laser_scanning_3_of_20 ,
+                                              ampo:laser_scanning_4_of_20 ,
+                                              ampo:laser_scanning_5_of_20 ,
+                                              ampo:laser_scanning_6_of_20 ,
+                                              ampo:laser_scanning_7_of_20 ,
+                                              ampo:laser_scanning_8_of_20 ,
+                                              ampo:laser_scanning_9_of_20 ,
+                                              ampo:laser_scanning_10_of_20 ,
+                                              ampo:laser_scanning_11_of_20 ,
+                                              ampo:laser_scanning_12_of_20 ,
+                                              ampo:laser_scanning_13_of_20 ,
+                                              ampo:laser_scanning_14_of_20 ,
+                                              ampo:laser_scanning_15_of_20 ,
+                                              ampo:laser_scanning_16_of_20 ,
+                                              ampo:laser_scanning_17_of_20 ,
+                                              ampo:laser_scanning_18_of_20 ,
+                                              ampo:laser_scanning_19_of_20 ,
+                                              ampo:laser_scanning_20_of_20 ; 
+                         rdfs:label "ebeam optics system" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_path
+ampo:ebeam_path rdf:type ampo:QuantitativeInput ;
+                rdfs:label "ebeam path" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_path_CAD_model
+ampo:ebeam_path_CAD_model rdf:type ampo:Model ;
+                          ampo:isParticipantIn ampo:ebeam_loop_1_of_20 ,
+                                               ampo:ebeam_loop_2_of_20 ,
+                                               ampo:ebeam_loop_3_of_20 ,
+                                               ampo:ebeam_loop_4_of_20 ,
+                                               ampo:ebeam_loop_5_of_20 ,
+                                               ampo:ebeam_loop_6_of_20 ,
+                                               ampo:ebeam_loop_7_of_20 ,
+                                               ampo:ebeam_loop_8_of_20 ,
+                                               ampo:ebeam_loop_9_of_20 ,
+                                               ampo:ebeam_loop_10_of_20 ,
+                                               ampo:ebeam_loop_11_of_20 ,
+                                               ampo:ebeam_loop_12_of_20 ,
+                                               ampo:ebeam_loop_13_of_20 ,
+                                               ampo:ebeam_loop_14_of_20 ,
+                                               ampo:ebeam_loop_15_of_20 ,
+                                               ampo:ebeam_loop_16_of_20 ,
+                                               ampo:ebeam_loop_17_of_20 ,
+                                               ampo:ebeam_loop_18_of_20 ,
+                                               ampo:ebeam_loop_19_of_20 ,
+                                               ampo:ebeam_loop_20_of_20 ;
+                          ampo:determines ampo:ebeam_path ;
+                          rdfs:label "ebeam path CAD model" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_post-processing
+ampo:ebeam_post-processing rdf:type ampo:Process ;
+                           ampo:produces dmo:part_np1 ;
+                           rdfs:label "ebeam post-processing" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_pump
+ampo:ebeam_pump rdf:type ampo:Actuator ;
+                ampo:hasAttribute ampo:pump_flow_rate ,
+                                  ampo:pump_max_power ;
+                ampo:isParticipantIn ampo:ebeam_chamber_preparation ;
+                ampo:hasInput ampo:pressure ;
+                ampo:movesMaterial ampo:ebeam_gas ;
+                rdfs:label "ebeam pump" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#electron_beam_deposition
+ampo:electron_beam_deposition rdf:type ampo:Process ;
+                              prov:qualifiedAssociation [ prov:agent dmo:tom ;
+                                                          prov:hadRole prov:operator
+                                                        ] ;
+                              ampo:happensDirectlyBefore ampo:ebeam_post-processing ;
+                              ampo:hasStep ampo:ebeam_chamber_preparation ;
+                              ampo:hasSubProcess ampo:ebeam_loop_1_of_20 ,
+                                                 ampo:ebeam_loop_2_of_20 ,
+                                                 ampo:ebeam_loop_3_of_20 ,
+                                                 ampo:ebeam_loop_4_of_20 ,
+                                                 ampo:ebeam_loop_5_of_20 ,
+                                                 ampo:ebeam_loop_6_of_20 ,
+                                                 ampo:ebeam_loop_7_of_20 ,
+                                                 ampo:ebeam_loop_8_of_20 ,
+                                                 ampo:ebeam_loop_9_of_20 ,
+                                                 ampo:ebeam_loop_10_of_20 ,
+                                                 ampo:ebeam_loop_11_of_20 ,
+                                                 ampo:ebeam_loop_12_of_20 ,
+                                                 ampo:ebeam_loop_13_of_20 ,
+                                                 ampo:ebeam_loop_14_of_20 ,
+                                                 ampo:ebeam_loop_15_of_20 ,
+                                                 ampo:ebeam_loop_16_of_20 ,
+                                                 ampo:ebeam_loop_17_of_20 ,
+                                                 ampo:ebeam_loop_18_of_20 ,
+                                                 ampo:ebeam_loop_19_of_20 ,
+                                                 ampo:ebeam_loop_20_of_20 ;
+                              ampo:produces dmo:part_np1-blue ;
+                              rdfs:label "electron beam deposition" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#feed_max_speed
+ampo:feed_max_speed rdf:type ampo:Capacity ,
+                             ampo:StaticQuantitativeAttribute ;
+                    rdfs:label "feed max speed" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#focal_length
+ampo:focal_length rdf:type ampo:Capacity ,
+                           ampo:StaticQuantitativeAttribute ;
+                  rdfs:label "focal length" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#frequency
+ampo:frequency rdf:type ampo:Capacity ,
+                        ampo:StaticQuantitativeAttribute ;
+               rdfs:label "frequency" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#gas_reactivity
+ampo:gas_reactivity rdf:type ampo:AbstractAttribute ,
+                             ampo:Chemical ;
+                    rdfs:label "gas reactivity" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#gun_max_power
+ampo:gun_max_power rdf:type ampo:Capacity ,
+                            ampo:StaticQuantitativeAttribute ;
+                   rdfs:label "gun max power" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#gun_max_speed
+ampo:gun_max_speed rdf:type ampo:Capacity ,
+                            ampo:StaticQuantitativeAttribute ;
+                   rdfs:label "gun max speed" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#gun_step_size
+ampo:gun_step_size rdf:type ampo:Capacity ,
+                            ampo:StaticQuantitativeAttribute ;
+                   rdfs:label "gun step size" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#mechanical_porosity
+ampo:mechanical_porosity rdf:type ampo:Mechanical ,
+                                  ampo:StaticQuantitativeAttribute ;
+                         rdfs:label "mechanical porosity" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#melting_point
+ampo:melting_point rdf:type ampo:Chemical ,
+                            ampo:StaticQuantitativeAttribute ;
+                   rdfs:label "melting point" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#part_composition
+ampo:part_composition rdf:type ampo:Chemical ,
+                               ampo:StaticQuantitativeAttribute ;
+                      rdfs:label "part composition" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#power
+ampo:power rdf:type ampo:QuantitativeInput ;
+           rdfs:label "power" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#pressure
+ampo:pressure rdf:type ampo:QuantitativeInput ;
+              rdfs:label "pressure" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#pump_flow_rate
+ampo:pump_flow_rate rdf:type ampo:Capacity ,
+                             ampo:StaticQuantitativeAttribute ;
+                    rdfs:label "pump flow rate" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#pump_max_power
+ampo:pump_max_power rdf:type ampo:Capacity ,
+                             ampo:StaticQuantitativeAttribute ;
+                    rdfs:label "pump max power" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#reflectivity
+ampo:reflectivity rdf:type ampo:Optical ,
+                           ampo:StaticQuantitativeAttribute ;
+                  rdfs:label "reflectivity" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#speed
+ampo:speed rdf:type ampo:QuantitativeInput ;
+           rdfs:label "speed" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#spot_diameter
+ampo:spot_diameter rdf:type ampo:Capacity ,
+                            ampo:StaticQuantitativeAttribute ;
+                   rdfs:label "spot diameter" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#state
+ampo:state rdf:type ampo:AbstractAttribute ,
+                    ampo:Chemical ;
+           rdfs:label "state" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#surface_finish
+ampo:surface_finish rdf:type ampo:Geometric ,
+                             ampo:StaticQuantitativeAttribute ;
+                    rdfs:label "surface finish" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#temperature
+ampo:temperature rdf:type ampo:QuantitativeInput ;
+                 rdfs:label "temperature" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#tensile_strength
+ampo:tensile_strength rdf:type ampo:Mechanical ,
+                               ampo:StaticQuantitativeAttribute ;
+                      rdfs:label "tensile strength" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#thermal_conductivity
+ampo:thermal_conductivity rdf:type ampo:StaticQuantitativeAttribute ,
+                                   ampo:Thermal ;
+                          rdfs:label "thermal conductivity" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#thermal_expansion_coefficient
+ampo:thermal_expansion_coefficient rdf:type ampo:StaticQuantitativeAttribute ,
+                                            ampo:Thermal ;
+                                   rdfs:label "thermal expansion coefficient" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#volume
+ampo:volume rdf:type ampo:Capacity ,
+                     ampo:StaticQuantitativeAttribute ;
+            rdfs:label "volume" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire
+ampo:wire rdf:type ampo:BuildMaterial ;
+          ampo:hasAttribute ampo:melting_point ,
+                            ampo:thermal_conductivity ,
+                            ampo:thermal_expansion_coefficient ,
+                            ampo:wire_composition ,
+                            ampo:wire_reactivity ;
+          ampo:isParticipantIn ampo:wire_feeding_1_of_20 ,                               
+                               ampo:wire_feeding_2_of_20 ,
+                               ampo:wire_feeding_3_of_20 ,
+                               ampo:wire_feeding_4_of_20 ,
+                               ampo:wire_feeding_5_of_20 ,
+                               ampo:wire_feeding_6_of_20 ,
+                               ampo:wire_feeding_7_of_20 ,
+                               ampo:wire_feeding_8_of_20 ,
+                               ampo:wire_feeding_9_of_20 ,
+                               ampo:wire_feeding_10_of_20 ,
+                               ampo:wire_feeding_11_of_20 ,
+                               ampo:wire_feeding_12_of_20 ,
+                               ampo:wire_feeding_13_of_20 ,
+                               ampo:wire_feeding_14_of_20 ,
+                               ampo:wire_feeding_15_of_20 ,
+                               ampo:wire_feeding_16_of_20 ,
+                               ampo:wire_feeding_17_of_20 ,
+                               ampo:wire_feeding_18_of_20 ,
+                               ampo:wire_feeding_19_of_20 ,
+                               ampo:wire_feeding_20_of_20 ,
+                               ampo:laser_scanning_1_of_20 ,
+                               ampo:laser_scanning_2_of_20 ,
+                               ampo:laser_scanning_3_of_20 ,
+                               ampo:laser_scanning_4_of_20 ,
+                               ampo:laser_scanning_5_of_20 ,
+                               ampo:laser_scanning_6_of_20 ,
+                               ampo:laser_scanning_7_of_20 ,
+                               ampo:laser_scanning_8_of_20 ,
+                               ampo:laser_scanning_9_of_20 ,
+                               ampo:laser_scanning_10_of_20 ,
+                               ampo:laser_scanning_11_of_20 ,
+                               ampo:laser_scanning_12_of_20 ,
+                               ampo:laser_scanning_13_of_20 ,
+                               ampo:laser_scanning_14_of_20 ,
+                               ampo:laser_scanning_15_of_20 ,
+                               ampo:laser_scanning_16_of_20 ,
+                               ampo:laser_scanning_17_of_20 ,
+                               ampo:laser_scanning_18_of_20 ,
+                               ampo:laser_scanning_19_of_20 ,
+                               ampo:laser_scanning_20_of_20 ; 
+          rdfs:label "wire" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_composition
+ampo:wire_composition rdf:type ampo:Chemical ,
+                               ampo:StaticQuantitativeAttribute ;
+                      rdfs:label "wire composition" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_reactivity
+ampo:wire_reactivity rdf:type ampo:AbstractAttribute ,
+                              ampo:Chemical ;
+                     rdfs:label "wire reactivity" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#chemical_composition_postht
+dmo:chemical_composition_postht rdf:type dmo:Numerical ,
+                                         dmo:Output ;
+                                rdfs:label "chemical composition postHT" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#chemical_composition_preht
+dmo:chemical_composition_preht rdf:type dmo:Numerical ,
+                                        dmo:Output ;
+                               rdfs:label "chemical composition preHT" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#ctscan_Postht
+dmo:ctscan_Postht rdf:type dmo:Graphical ,
+                           dmo:Output ;
+                  dmo:generates dmo:image_postht ;
+                  rdfs:label "CTscan postHT" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#ctscan_preht
+dmo:ctscan_preht rdf:type dmo:Graphical ,
+                          dmo:Output ;
+                 dmo:generates dmo:image_preht ;
+                 rdfs:label "CTscan preHT" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#executable_file_postht
+dmo:executable_file_postht rdf:type dmo:Graphical ,
+                                    dmo:Output ;
+                           rdfs:label "executable file postHT" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#executable_file_preht
+dmo:executable_file_preht rdf:type dmo:Graphical ,
+                                   dmo:Output ;
+                          rdfs:label "executable file preHT" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#image_postht
+dmo:image_postht rdf:type dmo:Graphical ,
+                          dmo:Output ;
+                 dmo:generates dmo:indication_report_postht ;
+                 rdfs:label "image postHT" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#image_preht
+dmo:image_preht rdf:type dmo:Graphical ,
+                         dmo:Output ;
+                dmo:generates dmo:indication_report_preht ;
+                rdfs:label "image preHT" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#indication_report_postht
+dmo:indication_report_postht rdf:type dmo:Numerical ,
+                                      dmo:Output ;
+                             rdfs:label "indication report postHT" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#indication_report_preht
+dmo:indication_report_preht rdf:type dmo:Numerical ,
+                                     dmo:Output ;
+                            rdfs:label "indication report preHT" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#part_np1
+dmo:part_np1 rdf:type dmo:Part ;
+             dmo:contains dmo:section_np1_01 ;
+             dmo:hasID "NP1"^^xsd:string ;
+             rdfs:label "Part NP1" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#part_np1-blue
+dmo:part_np1-blue rdf:type dmo:Part ;
+                  ampo:hasAttribute ampo:chemical_porosity ,
+                                    ampo:ct_scan_image ,
+                                    ampo:dimensional_accuracy ,
+                                    ampo:mechanical_porosity ,
+                                    ampo:part_composition ,
+                                    ampo:state ,
+                                    ampo:surface_finish ,
+                                    ampo:tensile_strength ;
+                  ampo:isParticipantIn ampo:ebeam_post-processing ;
+                  dmo:contains dmo:section_np1-blue_01 ;
+                  dmo:hasID "NP1-Blue"^^xsd:string ;
+                  rdfs:label "Part NP1-Blue" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#section_np1-blue_01
+dmo:section_np1-blue_01 rdf:type dmo:Section ;
+                        dmo:hasOutput dmo:chemical_composition_preht ,
+                                      dmo:ctscan_preht ,
+                                      dmo:executable_file_preht ,
+                                      dmo:image_preht ,
+                                      dmo:indication_report_preht ;
+                        dmo:hasID "NP1-Blue 01"^^xsd:string ;
+                        rdfs:label "Section NP1-Blue 01" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#section_np1_01
+dmo:section_np1_01 rdf:type dmo:Section ;
+                   dmo:hasOutput dmo:chemical_composition_postht ,
+                                 dmo:ctscan_Postht ,
+                                 dmo:executable_file_postht ,
+                                 dmo:image_postht ,
+                                 dmo:indication_report_postht ,
+                                 dmo:tensile_strength_postht ;
+                   dmo:hasID "NP1 01"^^xsd:string ;
+                   rdfs:label "Section NP1 01" .
+
+
+###  https://tw.rpi.edu/web/project/dmo#tensile_strength_postht
+dmo:tensile_strength_postht rdf:type dmo:Numerical ,
+                                     dmo:Output ;
+                            rdfs:label "tensile strength postHT" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_1_of_20
+ampo:ebeam_loop_1_of_20 rdf:type ampo:Process ;
+                        ampo:happensDirectlyBefore ampo:ebeam_loop_2_of_20 ;
+                        ampo:hasStep ampo:wire_feeding_1_of_20 ,
+                                     ampo:preheat_1_of_20 ,                                     
+                                     ampo:laser_scanning_1_of_20 ;
+                        rdfs:label "ebeam loop 1 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_1_of_20
+ampo:wire_feeding_1_of_20 rdf:type ampo:Step ;
+                          ampo:happensDirectlyBefore ampo:preheat_1_of_20 ;
+                          rdfs:label "wire feeding 1 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_1_of_20
+ampo:preheat_1_of_20 rdf:type ampo:Step ;
+                     ampo:happensDirectlyBefore ampo:laser_scanning_1_of_20 ;
+                     rdfs:label "preheat 1 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_1_of_20
+ampo:laser_scanning_1_of_20 rdf:type ampo:Step ;
+                            rdfs:label "laser scanning 1 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_2_of_20
+ampo:ebeam_loop_2_of_20 rdf:type ampo:Process ;
+                        ampo:hasStep ampo:wire_feeding_2_of_20 ,
+                                     ampo:preheat_2_of_20 ,                                     
+                                     ampo:laser_scanning_2_of_20 ;
+                        rdfs:label "ebeam loop 2 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_2_of_20
+ampo:wire_feeding_2_of_20 rdf:type ampo:Step ;
+                          ampo:happensDirectlyBefore ampo:preheat_2_of_20 ;
+                          rdfs:label "wire feeding 2 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_2_of_20
+ampo:preheat_2_of_20 rdf:type ampo:Step ;
+                     ampo:happensDirectlyBefore ampo:laser_scanning_2_of_20 ;
+                     rdfs:label "preheat 2 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_2_of_20
+ampo:laser_scanning_2_of_20 rdf:type ampo:Step ;
+                            rdfs:label "laser scanning 2 of 20" .
