@@ -1,0 +1,519 @@
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_1_of_20
+ampo:ebeam_loop_1_of_20 rdf:type ampo:Process ;
+                        ampo:happensDirectlyBefore ampo:ebeam_loop_2_of_20 ;
+                        ampo:hasStep ampo:wire_feeding_1_of_20 ,
+                                     ampo:preheat_1_of_20 ,
+                                     ampo:laser_scanning_1_of_20 ;
+                        rdfs:label "ebeam loop 1 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_1_of_20
+ampo:wire_feeding_1_of_20 rdf:type ampo:Step ;
+                          ampo:happensDirectlyBefore ampo:preheat_1_of_20 ;
+                          rdfs:label "wire feeding 1 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_1_of_20
+ampo:preheat_1_of_20 rdf:type ampo:Step ;
+                     ampo:happensDirectlyBefore ampo:laser_scanning_1_of_20 ;
+                     rdfs:label "preheat 1 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_1_of_20
+ampo:laser_scanning_1_of_20 rdf:type ampo:Step ;
+                            rdfs:label "laser scanning 1 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_2_of_20
+ampo:ebeam_loop_2_of_20 rdf:type ampo:Process ;
+                        ampo:happensDirectlyBefore ampo:ebeam_loop_3_of_20 ;
+                        ampo:hasStep ampo:wire_feeding_2_of_20 ,
+                                     ampo:preheat_2_of_20 ,
+                                     ampo:laser_scanning_2_of_20 ;
+                        rdfs:label "ebeam loop 2 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_2_of_20
+ampo:wire_feeding_2_of_20 rdf:type ampo:Step ;
+                          ampo:happensDirectlyBefore ampo:preheat_2_of_20 ;
+                          rdfs:label "wire feeding 2 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_2_of_20
+ampo:preheat_2_of_20 rdf:type ampo:Step ;
+                     ampo:happensDirectlyBefore ampo:laser_scanning_2_of_20 ;
+                     rdfs:label "preheat 2 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_2_of_20
+ampo:laser_scanning_2_of_20 rdf:type ampo:Step ;
+                            rdfs:label "laser scanning 2 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_3_of_20
+ampo:ebeam_loop_3_of_20 rdf:type ampo:Process ;
+                        ampo:happensDirectlyBefore ampo:ebeam_loop_4_of_20 ;
+                        ampo:hasStep ampo:wire_feeding_3_of_20 ,
+                                     ampo:preheat_3_of_20 ,
+                                     ampo:laser_scanning_3_of_20 ;
+                        rdfs:label "ebeam loop 3 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_3_of_20
+ampo:wire_feeding_3_of_20 rdf:type ampo:Step ;
+                          ampo:happensDirectlyBefore ampo:preheat_3_of_20 ;
+                          rdfs:label "wire feeding 3 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_3_of_20
+ampo:preheat_3_of_20 rdf:type ampo:Step ;
+                     ampo:happensDirectlyBefore ampo:laser_scanning_3_of_20 ;
+                     rdfs:label "preheat 3 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_3_of_20
+ampo:laser_scanning_3_of_20 rdf:type ampo:Step ;
+                            rdfs:label "laser scanning 3 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_4_of_20
+ampo:ebeam_loop_4_of_20 rdf:type ampo:Process ;
+                        ampo:happensDirectlyBefore ampo:ebeam_loop_5_of_20 ;
+                        ampo:hasStep ampo:wire_feeding_4_of_20 ,
+                                     ampo:preheat_4_of_20 ,
+                                     ampo:laser_scanning_4_of_20 ;
+                        rdfs:label "ebeam loop 4 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_4_of_20
+ampo:wire_feeding_4_of_20 rdf:type ampo:Step ;
+                          ampo:happensDirectlyBefore ampo:preheat_4_of_20 ;
+                          rdfs:label "wire feeding 4 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_4_of_20
+ampo:preheat_4_of_20 rdf:type ampo:Step ;
+                     ampo:happensDirectlyBefore ampo:laser_scanning_4_of_20 ;
+                     rdfs:label "preheat 4 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_4_of_20
+ampo:laser_scanning_4_of_20 rdf:type ampo:Step ;
+                            rdfs:label "laser scanning 4 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_5_of_20
+ampo:ebeam_loop_5_of_20 rdf:type ampo:Process ;
+                        ampo:happensDirectlyBefore ampo:ebeam_loop_6_of_20 ;
+                        ampo:hasStep ampo:wire_feeding_5_of_20 ,
+                                     ampo:preheat_5_of_20 ,
+                                     ampo:laser_scanning_5_of_20 ;
+                        rdfs:label "ebeam loop 5 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_5_of_20
+ampo:wire_feeding_5_of_20 rdf:type ampo:Step ;
+                          ampo:happensDirectlyBefore ampo:preheat_5_of_20 ;
+                          rdfs:label "wire feeding 5 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_5_of_20
+ampo:preheat_5_of_20 rdf:type ampo:Step ;
+                     ampo:happensDirectlyBefore ampo:laser_scanning_5_of_20 ;
+                     rdfs:label "preheat 5 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_5_of_20
+ampo:laser_scanning_5_of_20 rdf:type ampo:Step ;
+                            rdfs:label "laser scanning 5 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_6_of_20
+ampo:ebeam_loop_6_of_20 rdf:type ampo:Process ;
+                        ampo:happensDirectlyBefore ampo:ebeam_loop_7_of_20 ;
+                        ampo:hasStep ampo:wire_feeding_6_of_20 ,
+                                     ampo:preheat_6_of_20 ,
+                                     ampo:laser_scanning_6_of_20 ;
+                        rdfs:label "ebeam loop 6 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_6_of_20
+ampo:wire_feeding_6_of_20 rdf:type ampo:Step ;
+                          ampo:happensDirectlyBefore ampo:preheat_6_of_20 ;
+                          rdfs:label "wire feeding 6 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_6_of_20
+ampo:preheat_6_of_20 rdf:type ampo:Step ;
+                     ampo:happensDirectlyBefore ampo:laser_scanning_6_of_20 ;
+                     rdfs:label "preheat 6 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_6_of_20
+ampo:laser_scanning_6_of_20 rdf:type ampo:Step ;
+                            rdfs:label "laser scanning 6 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_7_of_20
+ampo:ebeam_loop_7_of_20 rdf:type ampo:Process ;
+                        ampo:happensDirectlyBefore ampo:ebeam_loop_8_of_20 ;
+                        ampo:hasStep ampo:wire_feeding_7_of_20 ,
+                                     ampo:preheat_7_of_20 ,
+                                     ampo:laser_scanning_7_of_20 ;
+                        rdfs:label "ebeam loop 7 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_7_of_20
+ampo:wire_feeding_7_of_20 rdf:type ampo:Step ;
+                          ampo:happensDirectlyBefore ampo:preheat_7_of_20 ;
+                          rdfs:label "wire feeding 7 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_7_of_20
+ampo:preheat_7_of_20 rdf:type ampo:Step ;
+                     ampo:happensDirectlyBefore ampo:laser_scanning_7_of_20 ;
+                     rdfs:label "preheat 7 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_7_of_20
+ampo:laser_scanning_7_of_20 rdf:type ampo:Step ;
+                            rdfs:label "laser scanning 7 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_8_of_20
+ampo:ebeam_loop_8_of_20 rdf:type ampo:Process ;
+                        ampo:happensDirectlyBefore ampo:ebeam_loop_9_of_20 ;
+                        ampo:hasStep ampo:wire_feeding_8_of_20 ,
+                                     ampo:preheat_8_of_20 ,
+                                     ampo:laser_scanning_8_of_20 ;
+                        rdfs:label "ebeam loop 8 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_8_of_20
+ampo:wire_feeding_8_of_20 rdf:type ampo:Step ;
+                          ampo:happensDirectlyBefore ampo:preheat_8_of_20 ;
+                          rdfs:label "wire feeding 8 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_8_of_20
+ampo:preheat_8_of_20 rdf:type ampo:Step ;
+                     ampo:happensDirectlyBefore ampo:laser_scanning_8_of_20 ;
+                     rdfs:label "preheat 8 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_8_of_20
+ampo:laser_scanning_8_of_20 rdf:type ampo:Step ;
+                            rdfs:label "laser scanning 8 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_9_of_20
+ampo:ebeam_loop_9_of_20 rdf:type ampo:Process ;
+                        ampo:happensDirectlyBefore ampo:ebeam_loop_10_of_20 ;
+                        ampo:hasStep ampo:wire_feeding_9_of_20 ,
+                                     ampo:preheat_9_of_20 ,
+                                     ampo:laser_scanning_9_of_20 ;
+                        rdfs:label "ebeam loop 9 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_9_of_20
+ampo:wire_feeding_9_of_20 rdf:type ampo:Step ;
+                          ampo:happensDirectlyBefore ampo:preheat_9_of_20 ;
+                          rdfs:label "wire feeding 9 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_9_of_20
+ampo:preheat_9_of_20 rdf:type ampo:Step ;
+                     ampo:happensDirectlyBefore ampo:laser_scanning_9_of_20 ;
+                     rdfs:label "preheat 9 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_9_of_20
+ampo:laser_scanning_9_of_20 rdf:type ampo:Step ;
+                            rdfs:label "laser scanning 9 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_10_of_20
+ampo:ebeam_loop_10_of_20 rdf:type ampo:Process ;
+                         ampo:happensDirectlyBefore ampo:ebeam_loop_11_of_20 ;
+                         ampo:hasStep ampo:wire_feeding_10_of_20 ,
+                                      ampo:preheat_10_of_20 ,
+                                      ampo:laser_scanning_10_of_20 ;
+                         rdfs:label "ebeam loop 10 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_10_of_20
+ampo:wire_feeding_10_of_20 rdf:type ampo:Step ;
+                           ampo:happensDirectlyBefore ampo:preheat_10_of_20 ;
+                           rdfs:label "wire feeding 10 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_10_of_20
+ampo:preheat_10_of_20 rdf:type ampo:Step ;
+                      ampo:happensDirectlyBefore ampo:laser_scanning_10_of_20 ;
+                      rdfs:label "preheat 10 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_10_of_20
+ampo:laser_scanning_10_of_20 rdf:type ampo:Step ;
+                             rdfs:label "laser scanning 10 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_11_of_20
+ampo:ebeam_loop_11_of_20 rdf:type ampo:Process ;
+                         ampo:happensDirectlyBefore ampo:ebeam_loop_12_of_20 ;
+                         ampo:hasStep ampo:wire_feeding_11_of_20 ,
+                                      ampo:preheat_11_of_20 ,
+                                      ampo:laser_scanning_11_of_20 ;
+                         rdfs:label "ebeam loop 11 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_11_of_20
+ampo:wire_feeding_11_of_20 rdf:type ampo:Step ;
+                           ampo:happensDirectlyBefore ampo:preheat_11_of_20 ;
+                           rdfs:label "wire feeding 11 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_11_of_20
+ampo:preheat_11_of_20 rdf:type ampo:Step ;
+                      ampo:happensDirectlyBefore ampo:laser_scanning_11_of_20 ;
+                      rdfs:label "preheat 11 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_11_of_20
+ampo:laser_scanning_11_of_20 rdf:type ampo:Step ;
+                             rdfs:label "laser scanning 11 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_12_of_20
+ampo:ebeam_loop_12_of_20 rdf:type ampo:Process ;
+                         ampo:happensDirectlyBefore ampo:ebeam_loop_13_of_20 ;
+                         ampo:hasStep ampo:wire_feeding_12_of_20 ,
+                                      ampo:preheat_12_of_20 ,
+                                      ampo:laser_scanning_12_of_20 ;
+                         rdfs:label "ebeam loop 12 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_12_of_20
+ampo:wire_feeding_12_of_20 rdf:type ampo:Step ;
+                           ampo:happensDirectlyBefore ampo:preheat_12_of_20 ;
+                           rdfs:label "wire feeding 12 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_12_of_20
+ampo:preheat_12_of_20 rdf:type ampo:Step ;
+                      ampo:happensDirectlyBefore ampo:laser_scanning_12_of_20 ;
+                      rdfs:label "preheat 12 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_12_of_20
+ampo:laser_scanning_12_of_20 rdf:type ampo:Step ;
+                             rdfs:label "laser scanning 12 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_13_of_20
+ampo:ebeam_loop_13_of_20 rdf:type ampo:Process ;
+                         ampo:happensDirectlyBefore ampo:ebeam_loop_14_of_20 ;
+                         ampo:hasStep ampo:wire_feeding_13_of_20 ,
+                                      ampo:preheat_13_of_20 ,
+                                      ampo:laser_scanning_13_of_20 ;
+                         rdfs:label "ebeam loop 13 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_13_of_20
+ampo:wire_feeding_13_of_20 rdf:type ampo:Step ;
+                           ampo:happensDirectlyBefore ampo:preheat_13_of_20 ;
+                           rdfs:label "wire feeding 13 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_13_of_20
+ampo:preheat_13_of_20 rdf:type ampo:Step ;
+                      ampo:happensDirectlyBefore ampo:laser_scanning_13_of_20 ;
+                      rdfs:label "preheat 13 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_13_of_20
+ampo:laser_scanning_13_of_20 rdf:type ampo:Step ;
+                             rdfs:label "laser scanning 13 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_14_of_20
+ampo:ebeam_loop_14_of_20 rdf:type ampo:Process ;
+                         ampo:happensDirectlyBefore ampo:ebeam_loop_15_of_20 ;
+                         ampo:hasStep ampo:wire_feeding_14_of_20 ,
+                                      ampo:preheat_14_of_20 ,
+                                      ampo:laser_scanning_14_of_20 ;
+                         rdfs:label "ebeam loop 14 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_14_of_20
+ampo:wire_feeding_14_of_20 rdf:type ampo:Step ;
+                           ampo:happensDirectlyBefore ampo:preheat_14_of_20 ;
+                           rdfs:label "wire feeding 14 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_14_of_20
+ampo:preheat_14_of_20 rdf:type ampo:Step ;
+                      ampo:happensDirectlyBefore ampo:laser_scanning_14_of_20 ;
+                      rdfs:label "preheat 14 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_14_of_20
+ampo:laser_scanning_14_of_20 rdf:type ampo:Step ;
+                             rdfs:label "laser scanning 14 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_15_of_20
+ampo:ebeam_loop_15_of_20 rdf:type ampo:Process ;
+                         ampo:happensDirectlyBefore ampo:ebeam_loop_16_of_20 ;
+                         ampo:hasStep ampo:wire_feeding_15_of_20 ,
+                                      ampo:preheat_15_of_20 ,
+                                      ampo:laser_scanning_15_of_20 ;
+                         rdfs:label "ebeam loop 15 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_15_of_20
+ampo:wire_feeding_15_of_20 rdf:type ampo:Step ;
+                           ampo:happensDirectlyBefore ampo:preheat_15_of_20 ;
+                           rdfs:label "wire feeding 15 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_15_of_20
+ampo:preheat_15_of_20 rdf:type ampo:Step ;
+                      ampo:happensDirectlyBefore ampo:laser_scanning_15_of_20 ;
+                      rdfs:label "preheat 15 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_15_of_20
+ampo:laser_scanning_15_of_20 rdf:type ampo:Step ;
+                             rdfs:label "laser scanning 15 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_16_of_20
+ampo:ebeam_loop_16_of_20 rdf:type ampo:Process ;
+                         ampo:happensDirectlyBefore ampo:ebeam_loop_17_of_20 ;
+                         ampo:hasStep ampo:wire_feeding_16_of_20 ,
+                                      ampo:preheat_16_of_20 ,
+                                      ampo:laser_scanning_16_of_20 ;
+                         rdfs:label "ebeam loop 16 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_16_of_20
+ampo:wire_feeding_16_of_20 rdf:type ampo:Step ;
+                           ampo:happensDirectlyBefore ampo:preheat_16_of_20 ;
+                           rdfs:label "wire feeding 16 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_16_of_20
+ampo:preheat_16_of_20 rdf:type ampo:Step ;
+                      ampo:happensDirectlyBefore ampo:laser_scanning_16_of_20 ;
+                      rdfs:label "preheat 16 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_16_of_20
+ampo:laser_scanning_16_of_20 rdf:type ampo:Step ;
+                             rdfs:label "laser scanning 16 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_17_of_20
+ampo:ebeam_loop_17_of_20 rdf:type ampo:Process ;
+                         ampo:happensDirectlyBefore ampo:ebeam_loop_18_of_20 ;
+                         ampo:hasStep ampo:wire_feeding_17_of_20 ,
+                                      ampo:preheat_17_of_20 ,
+                                      ampo:laser_scanning_17_of_20 ;
+                         rdfs:label "ebeam loop 17 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_17_of_20
+ampo:wire_feeding_17_of_20 rdf:type ampo:Step ;
+                           ampo:happensDirectlyBefore ampo:preheat_17_of_20 ;
+                           rdfs:label "wire feeding 17 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_17_of_20
+ampo:preheat_17_of_20 rdf:type ampo:Step ;
+                      ampo:happensDirectlyBefore ampo:laser_scanning_17_of_20 ;
+                      rdfs:label "preheat 17 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_17_of_20
+ampo:laser_scanning_17_of_20 rdf:type ampo:Step ;
+                             rdfs:label "laser scanning 17 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_18_of_20
+ampo:ebeam_loop_18_of_20 rdf:type ampo:Process ;
+                         ampo:happensDirectlyBefore ampo:ebeam_loop_19_of_20 ;
+                         ampo:hasStep ampo:wire_feeding_18_of_20 ,
+                                      ampo:preheat_18_of_20 ,
+                                      ampo:laser_scanning_18_of_20 ;
+                         rdfs:label "ebeam loop 18 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_18_of_20
+ampo:wire_feeding_18_of_20 rdf:type ampo:Step ;
+                           ampo:happensDirectlyBefore ampo:preheat_18_of_20 ;
+                           rdfs:label "wire feeding 18 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_18_of_20
+ampo:preheat_18_of_20 rdf:type ampo:Step ;
+                      ampo:happensDirectlyBefore ampo:laser_scanning_18_of_20 ;
+                      rdfs:label "preheat 18 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_18_of_20
+ampo:laser_scanning_18_of_20 rdf:type ampo:Step ;
+                             rdfs:label "laser scanning 18 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_19_of_20
+ampo:ebeam_loop_19_of_20 rdf:type ampo:Process ;
+                         ampo:happensDirectlyBefore ampo:ebeam_loop_20_of_20 ;
+                         ampo:hasStep ampo:wire_feeding_19_of_20 ,
+                                      ampo:preheat_19_of_20 ,
+                                      ampo:laser_scanning_19_of_20 ;
+                         rdfs:label "ebeam loop 19 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_19_of_20
+ampo:wire_feeding_19_of_20 rdf:type ampo:Step ;
+                           ampo:happensDirectlyBefore ampo:preheat_19_of_20 ;
+                           rdfs:label "wire feeding 19 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_19_of_20
+ampo:preheat_19_of_20 rdf:type ampo:Step ;
+                      ampo:happensDirectlyBefore ampo:laser_scanning_19_of_20 ;
+                      rdfs:label "preheat 19 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_19_of_20
+ampo:laser_scanning_19_of_20 rdf:type ampo:Step ;
+                             rdfs:label "laser scanning 19 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#ebeam_loop_20_of_20
+ampo:ebeam_loop_20_of_20 rdf:type ampo:Process ;
+                         ampo:hasStep ampo:wire_feeding_20_of_20 ,
+                                      ampo:preheat_20_of_20 ,
+                                      ampo:laser_scanning_20_of_20 ;
+                         rdfs:label "ebeam loop 20 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#wire_feeding_20_of_20
+ampo:wire_feeding_20_of_20 rdf:type ampo:Step ;
+                           ampo:happensDirectlyBefore ampo:preheat_20_of_20 ;
+                           rdfs:label "wire feeding 20 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#preheat_20_of_20
+ampo:preheat_20_of_20 rdf:type ampo:Step ;
+                      ampo:happensDirectlyBefore ampo:laser_scanning_20_of_20 ;
+                      rdfs:label "preheat 20 of 20" .
+
+
+###  https://tw.rpi.edu/web/project/ampo#laser_scanning_20_of_20
+ampo:laser_scanning_20_of_20 rdf:type ampo:Step ;
+                             rdfs:label "laser scanning 20 of 20" .
+
+
