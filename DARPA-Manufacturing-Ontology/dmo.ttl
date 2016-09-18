@@ -55,14 +55,14 @@ ampo:isAttributeOf rdf:type owl:ObjectProperty ;
 ###  https://tw.rpi.edu/web/project/dmo#belongsTo
 dmo:belongsTo rdf:type owl:ObjectProperty ;
               owl:inverseOf dmo:contains ;
-              rdfs:comment "" ;
+              rdfs:comment "A portion of a object's relationship regarding the whole." ;
               rdfs:label "belongs to" .
 
 
 ###  https://tw.rpi.edu/web/project/dmo#contains
 dmo:contains rdf:type owl:ObjectProperty ;
              owl:inverseOf dmo:belongsTo ;
-             rdfs:comment "" ;
+             rdfs:comment "The whole object's relationship regarding a portion of itself." ;
              rdfs:label "contains" .
 
 
@@ -70,7 +70,7 @@ dmo:contains rdf:type owl:ObjectProperty ;
 dmo:experimentsOn rdf:type owl:ObjectProperty ;
                   rdfs:domain dmo:Experiment ;
                   rdfs:range dmo:Coupon ;
-                  rdfs:comment "" ;
+                  rdfs:comment "A procedure performed on an object, in this case a specific coupon." ;
                   rdfs:label "experiments on" .
 
 
@@ -79,7 +79,7 @@ dmo:isGeneratedFrom rdf:type owl:ObjectProperty ;
                     owl:inverseOf dmo:generates ;
                     rdfs:domain dmo:Data ;
                     rdfs:range dmo:Data ;
-                    rdfs:comment "" ;
+                    rdfs:comment "Data that is derived from other data." ;
                     rdfs:label "is generated from" .
 
 
@@ -88,7 +88,7 @@ dmo:generates rdf:type owl:ObjectProperty ;
               owl:inverseOf dmo:isGeneratedFrom ;
               rdfs:domain dmo:Data ;
               rdfs:range dmo:Data ;
-              rdfs:comment "" ;
+              rdfs:comment "Data from an object produces other data." ;
               rdfs:label "generates" .
 
 
@@ -97,7 +97,7 @@ dmo:isOutputOf rdf:type owl:ObjectProperty ;
                owl:inverseOf dmo:hasOutput ;
                rdfs:domain dmo:Output ;
                rdfs:range dmo:Section ;
-               rdfs:comment "" ;
+               rdfs:comment "Numerical and graphical data gathered from the specified Section." ;
                rdfs:label "is output of" .
 
 
@@ -106,7 +106,7 @@ dmo:hasOutput rdf:type owl:ObjectProperty ;
               owl:inverseOf dmo:isOutputOf ;
               rdfs:domain dmo:Section ;
               rdfs:range dmo:Output ;
-              rdfs:comment "" ;
+              rdfs:comment "Section specific data." ;
               rdfs:label "has output" .
 
 
@@ -115,7 +115,7 @@ dmo:isResultOf rdf:type owl:ObjectProperty ;
                owl:inverseOf dmo:hasResult ;
                rdfs:domain dmo:Result ;
                rdfs:range dmo:Experiment ;
-               rdfs:comment "" ;
+               rdfs:comment "Data that is taken directly from the Experiment." ;
                rdfs:label "is result of" .
 
 
@@ -124,7 +124,7 @@ dmo:hasResult rdf:type owl:ObjectProperty ;
               owl:inverseOf dmo:isResultOf ;
               rdfs:domain dmo:Experiment ;
               rdfs:range dmo:Result ;
-              rdfs:comment "" ;
+              rdfs:comment "A procedure that yields numerical and/or graphical data." ;
               rdfs:label "has result" .
 
 
@@ -136,7 +136,7 @@ dmo:hasResult rdf:type owl:ObjectProperty ;
 dmo:downloadURL rdf:type owl:DatatypeProperty ;
                 rdfs:domain dmo:Data ;
                 rdfs:range xsd:anyURI ;
-                rdfs:comment "" ;
+                rdfs:comment "A selectable link containing data." ;
                 rdfs:label "download URL" .
 
 
@@ -148,7 +148,7 @@ dmo:hasID rdf:type owl:DatatypeProperty ;
                       dmo:Section ,
                       dmo:Series ;
           rdfs:range xsd:string ;
-          rdfs:comment "" ;
+          rdfs:comment "Displays the specific name of the specimen." ;
           rdfs:label "has ID" .
 
 
@@ -248,72 +248,72 @@ ampo:Thermal rdf:type owl:Class ;
 ###  https://tw.rpi.edu/web/project/dmo#Coupon
 dmo:Coupon rdf:type owl:Class ;
            rdfs:subClassOf ampo:Product ;
-           rdfs:comment "" ;
+           rdfs:comment "A specific portion of the panel." ;
            rdfs:label "Coupon" .
 
 
 ###  https://tw.rpi.edu/web/project/dmo#Data
 dmo:Data rdf:type owl:Class ;
-         rdfs:comment "" ;
+         rdfs:comment "Facts or statistics collected together for reference or analysis." ;
          rdfs:label "Data" .
 
 
 ###  https://tw.rpi.edu/web/project/dmo#Experiment
 dmo:Experiment rdf:type owl:Class ;
-               rdfs:comment "" ;
+               rdfs:comment "A scientific procedure resulting in the collection of data." ;
                rdfs:label "Experiment" .
 
 
 ###  https://tw.rpi.edu/web/project/dmo#Output
 dmo:Output rdf:type owl:Class ;
            rdfs:subClassOf dmo:Data ;
-           rdfs:comment "" ;
+           rdfs:comment "A subclass of data pertaining to a section of an additive manufactured part." ;
            rdfs:label "Output" .
 
 
 ###  https://tw.rpi.edu/web/project/dmo#Panel
 dmo:Panel rdf:type owl:Class ;
-          rdfs:comment "" ;
+          rdfs:comment "A group of six coupons belonging to the same series." ;
           rdfs:label "Panel" .
 
 
 ###  https://tw.rpi.edu/web/project/dmo#Part
 dmo:Part rdf:type owl:Class ;
          rdfs:subClassOf ampo:Product ;
-         rdfs:comment "" ;
+         rdfs:comment "The product of Electron Beam Deposition." ;
          rdfs:label "Part" .
 
 
 ###  https://tw.rpi.edu/web/project/dmo#Result
 dmo:Result rdf:type owl:Class ;
            rdfs:subClassOf dmo:Data ;
-           rdfs:comment "" ;
+           rdfs:comment "A subclass of data that is collected from an experiment." ;
            rdfs:label "Result" .
 
 
 ###  https://tw.rpi.edu/web/project/dmo#Numerical
 dmo:Numerical rdf:type owl:Class ;
               rdfs:subClassOf dmo:Data ;
-              rdfs:comment "" ;
+              rdfs:comment "Data that is presented as a number or set of numbers." ;
               rdfs:label "Numerical" .
 
 
 ###  https://tw.rpi.edu/web/project/dmo#Graphical
 dmo:Graphical rdf:type owl:Class ;
               rdfs:subClassOf dmo:Data ;
-              rdfs:comment "" ;
+              rdfs:comment "Data that is presented as an image or a plot." ;
               rdfs:label "Graphical" .
 
 
 ###  https://tw.rpi.edu/web/project/dmo#Section
 dmo:Section rdf:type owl:Class ;
-            rdfs:comment "" ;
+            rdfs:comment "A specific of an additive manufactured part." ;
             rdfs:label "Section" .
 
 
 ###  https://tw.rpi.edu/web/project/dmo#Series
 dmo:Series rdf:type owl:Class ;
-           rdfs:comment "" ;
+           rdfs:comment "Consisting of a group of panels that fall under the same design of experiment parameters." ;
            rdfs:label "Series" .
 
 
