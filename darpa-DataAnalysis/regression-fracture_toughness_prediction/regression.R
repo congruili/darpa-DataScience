@@ -25,7 +25,7 @@ adj.coe <- (N - 1) / (N - k - 1)
 means <- rep(mean(test[,target]), dim(test)[1])
 
 # random forest
-forest.model <- randomForest(AdjWork ~ ., data = train, importance=TRUE)
+forest.model <- randomForest(target ~ ., data = train, importance=TRUE)
 forest.predictions <- predict(forest.model, test[,predictors])
 forest.r.squared <- sum((forest.predictions-means)^2)/sum((test[,target]-means)^2)
 forest.adj.r.squared <- 1 - (1 - forest.r.squared) * adj.coe
@@ -33,7 +33,7 @@ forest.adj.r.squared <- 1 - (1 - forest.r.squared) * adj.coe
 importance(forest.model, type = 2)
 
 # conditional inference random forest(Cforest)
-cforest.model <- cforest(AdjWork ~ ., data = train, control = cforest_unbiased(ntree = 500))
+cforest.model <- cforest(target ~ ., data = train, control = cforest_unbiased(ntree = 500))
 cforest.predictions <- predict(cforest.model, newdata = test[,predictors])
 cforest.r.squared <- sum((cforest.predictions-means)^2)/sum((test[,target]-means)^2)
 cforest.adj.r.squared <- 1 - (1 - cforest.r.squared) * adj.coe
@@ -50,7 +50,15 @@ lasso.predictions <- predict(cvfit, newx = as.matrix(test[,predictors]), s = "la
 lasso.r.squared <- sum((lasso.predictions-means)^2)/sum((test[,target]-means)^2)
 lasso.adj.r.squared <- 1 - (1 - lasso.r.squared) * adj.coe
 # feature importance (for this model, coefficient of each feature). also try s = "lambda.1se"
-coef(cvfit, s = "lambda.min")
+coef <- coef(cvfit, s = "lambda.min")
+lasso.result <- data.frame(matrix(nrow = k, ncol = 2), row.names = predictors)
+colnames(lasso.result) <- c("coef", "importance")
+var.y <- var(test[,target])
+for (i in 1:k) {
+  lasso.result[i, 1] = coef[i+1]
+  lasso.result[i, 2] = (lasso.result[i, 1]^2) * var(test[,i]) / var.y
+}
+View(lasso.result)
 
 # eXtreme gradient boosting (XGBoost) using cross validation
 # 10 folds cross validation for training set, can assign different values to cv
