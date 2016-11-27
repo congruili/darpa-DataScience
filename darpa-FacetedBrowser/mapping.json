@@ -1,6 +1,6 @@
 {
-	"doe": {
-	    "properties": {
+    "doe": {
+        "properties": {
             "Coupon": {
                 "type": "multi_field",
                 "fields": {
@@ -40,8 +40,8 @@
                     }
                 }
             },
-	        "Measured Spreadsheet": {
-     	        "type": "string",
+            "Measured Spreadsheet": {
+                "type": "string",
                 "index": "not_analyzed"
             },
             "Calculated Spreadsheet": {
@@ -108,6 +108,6 @@
                 "type": "string",
                 "index": "not_analyzed"
             }
-	    }
-	}
+        }
+    }
 }
